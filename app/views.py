@@ -32,7 +32,7 @@ def index(request):
 def TeamMembers(request):
     names = ["Leha", "Doner"]
     surnames = ["Verstapen", "Hemelton"]
-    data = {"names" : names, "surnames": surnames, "authUserForm": forms.AuthUserForm}
+    data = {"names": names, "surnames": surnames, "authUserForm": forms.AuthUserForm}
     return render(
         request,
         "app/TeamMembersPage.html",
@@ -66,6 +66,7 @@ def Vacancy(request, id_vacancy):
 def Registration(request, type_registration):
     if request.method == "POST":
         regUserForm = forms.RegistrationUserForm(request.POST)
+        regCompForm = forms.RegistrationCompanyForm(request.POST)
 
         if regUserForm.is_valid():
             i = 1
@@ -73,6 +74,7 @@ def Registration(request, type_registration):
             i = 2
     else:
         regUserForm = forms.RegistrationUserForm()
+        regCompForm = forms.RegistrationCompanyForm()
 
     return render(
         request,
@@ -80,5 +82,6 @@ def Registration(request, type_registration):
         {
         "statusBtnAuth": False,
         "regUserForm": regUserForm,
+        "regCompForm": regCompForm,
         "type_registration": type_registration}
     )

@@ -69,10 +69,8 @@
 										{% for field in authUserForm %}
 										<div class="form-group form-auth__container">
 											{{field.label_tag}}
-											<div class="container">
-												{{field}}
-												<p class="text-muted font-weight-light">{{field.help_text}}</p>
-											</div>
+											{{field}}
+											<small class="form-text text-muted">{{field.help_text}}</small>
 										</div>
 										{% endfor %}
 										<div class="form-group">
