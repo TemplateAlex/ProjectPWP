@@ -13,24 +13,18 @@
         {% csrf_token %}
         <div class="container__form pb-1">
             <div class="container container-reg__form">
-                {% if type_registration == 'user'%}
-                {% for field in regUserForm %}
+                {% for field in regForm %}
                 <div class="form-group container-reg__items">
                     {{field.label_tag}}
                     {{field}}
                     <small class="form-text">{{field.help_text}}</small>
                 </div>
                 {% endfor %}
-                <a href="{% url 'registration' type_registration='company' %}" class="text-dark">Do you want to register a company?</a>
-                {% elif type_registration == 'company' %}
-                {% for field in regCompForm %}
-                <div class="form-group container-reg__items">
-                    {{field.label_tag}}
-                    {{field}}
-                    <small class="form-text">{{field.help_text}}</small>
+                <hr/>
+                {% if errors %}
+                <div class="errors__container container-fluid d-flex justify-content-center">
+                    <p class="error__info">{{errors}}</p>
                 </div>
-                {% endfor %}
-                <a href="{% url 'registration' type_registration='user' %}" class="text-dark">Do you want to register like a user?</a>
                 {% endif %}
                 <div class="container-fluid d-flex justify-content-end mt-2 mb-2">
                     <button type="submit" class="btn btn-light">Register</button>
@@ -39,7 +33,6 @@
         </div>
     </form>
 </div>
-
 {% endblock content %}
 
 {% block scripts %}

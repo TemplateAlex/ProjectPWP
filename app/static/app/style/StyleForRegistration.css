@@ -6,16 +6,22 @@
     width: 500px;
 }
 
-.container-reg__form a {
-    font-family: 'Pacifico', cursive;
-    font-size: 18px;
-}
-
 .container-reg__items label, small {
     font-family: 'Comfortaa', cursive;
 }
 
+hr {
+    margin-top:80px;
+}
 
+.form-check-input div {
+    margin-left: 40px;
+}
+
+.error__info {
+    font-family: 'Pacifico', cursive;
+    font-size: 18px;
+}
 /*Create animation for our plate*/
 @keyframes PopUpForm{
     0% {

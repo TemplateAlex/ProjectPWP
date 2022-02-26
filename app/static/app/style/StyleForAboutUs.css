@@ -54,22 +54,58 @@ p {
 }
 
 /*Create stilization for line under text card*/
-.line {
+.container-text__underline {
     transition: 1.5s;
     margin-top: -10px;
     height: 3px;
-    width: 0px;
+    width: 0%;
     background-color: rgb(255, 165, 0);
     box-shadow: 0px 0px 20px rgba(255, 165, 0, 0.7);
 }
 
+/*Create stilization for text in section "project_info"*/
+.info{
+    height:300px;
+    width: 80%;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+p {
+    font-size: 25px;
+    font-family: 'Snell Roundhand', cursive;
+}
+
+/*Create stilization for project information*/
+
+.container-project {
+    margin-top: 8%;
+}
+
+.container-project__info {
+    border-radius: 20px;
+    animation-name: flickBorderForProjInfo;
+    animation-iteration-count: infinite;
+    animation-duration: 20s;
+
+}
+
+.container-project__info h1 {
+    font-family: 'Comforter', cursive;
+}
+
 /*Create animation for cards with @keyframes*/
+@keyframes flickBorderForProjInfo {
+    0% {box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2)}
+    50% {box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.75)}
+    100% {box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2)}
+}
+
 @keyframes flickCard {
 	25% {box-shadow: 0px 0px 15px rgba(255, 165, 0, 0.75);}
 	50% {box-shadow: 0px 0px 15px rgba(255, 165, 0, 0.5);}
 	75% {box-shadow: 0px 0px 15px rgba(255, 165, 0, 0.75);}
 }
-
 
 /*Adding @media for adaptive site*/
 @media screen and (max-width: 600px) {

@@ -1,0 +1,56 @@
+{% extends 'app/Layout/layout.html' %}
+{% load static %}
+
+{% block style %}
+<link href="{% static 'app/style/StyleForAboutUs.css' %}" rel="stylesheet" type="text/css">
+{% endblock style %}
+
+
+{% block content %}
+<div class="developer__info">
+    <h1>Our developers:</h1>
+</div>
+
+<div class="cards__container">
+    {% for person in persons %}
+    <div class="card__container">
+        <div class="card__item {{person.person_id}}"></div>
+        <div class="information">
+            <ul class="info__list">
+                <li>
+                    <p>{{person.name}}</p>
+                </li>
+                <li>
+                    <p>{{person.surname}}</p>
+                </li>
+                <li>
+                    <p>{{person.address}}</p>
+                </li>
+                <li>
+                    <p>{{person.email}}</p>
+                </li>
+                <li>
+                    <p>{{person.telephone}}</p>
+                </li>
+            </ul>
+        </div>
+        <div class="container-text__underline"></div>
+    </div>
+    {% endfor %}
+</div>
+<div class="container-fluid d-flex justify-content-center container-project">
+    <div class="container container-project__info">
+        <h1>Информация о курсе</h1>
+        <p>В этом курсовом проекте, мы решили создать сайт в стиле поиска работы онлайн<br/>
+            К примеру, таких сайтов: headhunter, jooble. Для этого проекта мы использовали фреймворк Django<br/>
+            Также использовались: а) языки разметки (HTML, CSS), б) языки программирования (Python, JS), в) фреймворк для JS (jQuery) и набор инструментов (Bootstrap)</p>
+    </div>
+</div>
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="{% static 'app/scripts/ScriptForTeamMembers.js' %}"></script>
+<script src="{% static 'app/scripts/ScriptForSlidingWindow.js' %}"></script>
+
+{% endblock scripts %}

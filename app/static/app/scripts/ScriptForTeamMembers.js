@@ -20,16 +20,16 @@ function MoveCard(event) {
 //Create animation underline for text
 function UnderlineText(event) {
     let childs = this.parentElement.childNodes;
-    childs[3].style.width = halfHeightCard + 'px';
+    childs[5].style.width = '90%'
 }
 
 function DeleteUnderline(event) {
     let childs = this.parentElement.childNodes;
-    childs[3].style.width = '0px';
+    childs[5].style.width = '0%'
 }
 
 //Create Listener for text
-document.querySelectorAll('.info__list').forEach(text => {
+document.querySelectorAll('.information').forEach(text => {
     text.addEventListener('mouseover', UnderlineText);
     text.addEventListener('mouseout', DeleteUnderline);
 });
